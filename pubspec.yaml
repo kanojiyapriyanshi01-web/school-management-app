@@ -1,4 +1,4 @@
-﻿name: school_management_app
+name: school_management_app
 description: School Management Application
 publish_to: 'none'
 version: 1.0.0+1
@@ -20,6 +20,10 @@ dependencies:
   go_router: ^12.1.1
   intl: ^0.18.1
   cupertino_icons: ^1.0.2
+  pdf: ^3.13.0
+  printing: ^5.15.0
+  share_plus: ^13.1.0
+  path_provider: ^2.1.6
 dev_dependencies:
   flutter_test:
     sdk: flutter
