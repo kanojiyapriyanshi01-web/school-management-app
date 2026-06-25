@@ -1,4 +1,4 @@
-import 'package:flutter/foundation.dart';
+﻿import 'package:flutter/foundation.dart';
 import '../services/api_service.dart';
 
 // ?? Staff Model ??????
@@ -191,6 +191,37 @@ int get newJoinings => 2;
       return false;
     }
   }
+  Future<bool> updateStaff(int id, StaffModel staff) async {
+  try {
+    await apiService.put('/staff/$id', {
+      'name': staff.name,
+      'designation': staff.designation,
+      'department': staff.department,
+      'phone': staff.phone,
+      'email': staff.email,
+      'gender': staff.gender,
+      'dob': staff.dob,
+      'joining_date': staff.joiningDate,
+      'qualification': staff.qualification,
+      'experience': staff.experience,
+      'address': staff.address,
+      'role': staff.role,
+      'status': staff.status,
+    });
+    await fetchStaff();
+    return true;
+  } catch (e) {
+    return false;
+  }
+}
+
+StaffModel? getStaffById(int id) {
+  try {
+    return _staffList.firstWhere((s) => s.id == id);
+  } catch (e) {
+    return null;
+  }
+}
 
   Future<bool> deleteStaff(int id) async {
     try {

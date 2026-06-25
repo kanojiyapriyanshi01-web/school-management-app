@@ -1,4 +1,4 @@
-import 'package:flutter/foundation.dart';
+﻿import 'package:flutter/foundation.dart';
 import '../services/api_service.dart';
 
 enum LoadStatus { idle, loading, loaded, error }
@@ -194,6 +194,42 @@ class StudentProvider extends ChangeNotifier {
       return false;
     }
   }
+  Future<bool> updateStudent(int id, StudentModel student) async {
+  try {
+    await apiService.put('/students/$id', {
+      'name': student.name,
+      'roll_no': student.rollNo,
+      'class_name': student.className,
+      'section': student.section,
+      'gender': student.gender,
+      'dob': student.dob,
+      'phone': student.phone,
+      'email': student.email,
+      'address': student.address,
+      'father_name': student.fatherName,
+      'mother_name': student.motherName,
+      'parent_phone': student.parentPhone,
+      'blood_group': student.bloodGroup,
+      'admission_no': student.admissionNo,
+      'admission_date': student.admissionDate,
+      'transport': student.transport,
+      'bus_route': student.busRoute,
+      'status': student.status,
+    });
+    await fetchStudents();
+    return true;
+  } catch (e) {
+    return false;
+  }
+}
+
+StudentModel? getStudentById(int id) {
+  try {
+    return _students.firstWhere((s) => s.id == id);
+  } catch (e) {
+    return null;
+  }
+}
 
   Future<bool> deleteStudent(int id) async {
     try {
