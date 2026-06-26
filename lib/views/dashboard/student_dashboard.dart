@@ -31,7 +31,7 @@ class StudentDashboard extends StatelessWidget {
         padding: const EdgeInsets.all(16),
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           // Greeting
-          Text('Hello, ${user?.name ?? 'Student'} ??',
+          Text('Hello, ${user?.name ?? 'Student'} 👋',
             style: const TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
           const Text('Student Portal', style: TextStyle(color: Colors.grey, fontSize: 13)),
           const SizedBox(height: 16),
@@ -228,5 +228,3 @@ class StudentDashboard extends StatelessWidget {
     trailing: Text(date, style: TextStyle(fontSize: 11, color: color, fontWeight: FontWeight.w500)),
   );
 }
-
-

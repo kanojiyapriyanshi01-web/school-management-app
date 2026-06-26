@@ -37,7 +37,6 @@ class _HostelScreenState extends State<HostelScreen>
 
   @override
   Widget build(BuildContext context) {
-    final role = context.watch<AuthProvider>().user?.role;
     return Scaffold(
       appBar: AppBar(
         title: const Text('Hostel Management'),
@@ -68,18 +67,17 @@ class _HostelScreenState extends State<HostelScreen>
       ),
       body: TabBarView(
         controller: _tabController,
-        children: const [
-          HostelDashboard(),
-          HostelMasterScreen(),
-          RoomManagementScreen(),
-          StudentHostelScreen(),
-          HostelFeeScreen(),
-          HostelAttendanceScreen(),
-          ComplaintScreen(),
-          HostelReportsScreen(),
+        children: [
+          const HostelDashboard(),
+          const HostelMasterScreen(),
+          const RoomManagementScreen(),
+          const StudentHostelDetailScreen(),
+          const HostelFeeScreen(),
+          const HostelAttendanceScreen(),
+          const ComplaintScreen(),
+          const HostelReportsScreen(),
         ],
       ),
     );
   }
 }
-
