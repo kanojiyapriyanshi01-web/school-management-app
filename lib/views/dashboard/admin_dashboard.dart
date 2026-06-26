@@ -184,12 +184,6 @@ class AdminDashboard extends StatelessWidget {
               style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold, fontSize: 12))),
           const SizedBox(height: 20),
           const Divider(),
-          ListTile(leading: const Icon(Icons.edit, color: Colors.blue),
-            title: const Text('Edit Profile'), trailing: const Icon(Icons.chevron_right),
-            onTap: () => Navigator.pop(context)),
-          ListTile(leading: const Icon(Icons.lock_outline, color: Colors.orange),
-            title: const Text('Change Password'), trailing: const Icon(Icons.chevron_right),
-            onTap: () => Navigator.pop(context)),
           ListTile(leading: const Icon(Icons.logout, color: Colors.red),
             title: const Text('Logout', style: TextStyle(color: Colors.red)),
             onTap: () {
